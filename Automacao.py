@@ -1,11 +1,17 @@
 import pyautogui
 import time
 import pandas
+import os
+from dotenv import load_dotenv
 
 #link do sistema para o teste
+
+load_dotenv()
+
+email = os.getenv("LOGIN_EMAIL")
+senha = os.getenv("LOGIN_SENHA")
 link = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"
-email = "seuemail@gmail.com"
-senha = "essaeasenha"
+
 
 pyautogui.PAUSE = 0.5
 
