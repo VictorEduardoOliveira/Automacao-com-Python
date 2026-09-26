@@ -1,42 +1,48 @@
-# 🐍 Automação com Python
+# Automação de Cadastro de Produtos (RPA)
 
-Script de automação de tela (RPA) que usa **PyAutoGUI** e **Pandas** para cadastrar produtos automaticamente em um sistema web, lendo os dados diretamente de uma planilha CSV.
+Script de automação de tela (RPA) em Python que cadastra produtos automaticamente em um sistema web, lendo os dados de uma planilha CSV.
 
-## 📋 Sobre o projeto
+## Como funciona
 
-Em vez de digitar manualmente dezenas (ou centenas) de produtos em um sistema de cadastro, este script:
+O script abre o navegador, faz login no sistema, e para cada produto da planilha `produtos.csv`, preenche automaticamente os campos (código, marca, tipo, categoria, preço unitário, custo, observação) usando simulação de teclado e mouse.
 
-1. Abre o navegador Chrome;
-2. Acessa o sistema web e realiza o login automaticamente;
-3. Lê a base de produtos de um arquivo `produtos.csv`;
-4. Preenche o formulário de cadastro linha a linha, campo a campo, simulando cliques e digitação real do usuário.
+## Tecnologias utilizadas
 
-É um projeto de estudo focado em **automação de processos repetitivos (RPA)** com Python.
+- Python
+- PyAutoGUI (automação de teclado/mouse)
+- Pandas (leitura da planilha)
+- python-dotenv (variáveis de ambiente)
 
-## 🛠️ Tecnologias utilizadas
+## Como rodar o projeto
 
-- [Python 3](https://www.python.org/)
-- [PyAutoGUI](https://pyautogui.readthedocs.io/) — controle de mouse e teclado
-- [Pandas](https://pandas.pydata.org/) — leitura e manipulação do CSV
+### 1. Clonar o repositório
+\`\`\`bash
+git clone https://github.com/VictorEduardoOliveira/Automacao-com-Python.git
+cd Automacao-com-Python
+\`\`\`
 
-## 📁 Estrutura do projeto
+### 2. Instalar as dependências
+\`\`\`bash
+pip install pyautogui pandas python-dotenv
+\`\`\`
 
-```
-Automacao-com-Python/
-├── Automacao.py     # Script principal da automação
-├── produtos.csv      # Base de dados dos produtos a serem cadastrados
-└── README.md
-```
+### 3. Configurar as credenciais
+Crie um arquivo `.env` na raiz do projeto com:
+\`\`\`
+LOGIN_EMAIL=seuemail@gmail.com
+LOGIN_SENHA=suasenha
+\`\`\`
 
-## ⚙️ Como executar
+> O login nunca fica exposto no código — é carregado via variável de ambiente com `python-dotenv`.
 
-### Pré-requisitos
+### 4. Rodar o script
+\`\`\`bash
+python Automacao.py
+\`\`\`
 
-- Python 3 instalado
-- Google Chrome instalado
+> ⚠️ O PyAutoGUI controla o mouse e teclado de verdade. Não mexa no computador enquanto o script estiver rodando.
 
-### Instalação
+## Autor
 
-```bash
-pip install pyautogui pandas
-```
+Victor Eduardo Oliveira
+[LinkedIn](https://www.linkedin.com/in/victor-eduardo75/) | [GitHub](https://github.com/VictorEduardoOliveira)
